@@ -8,6 +8,12 @@ module.exports = {
         parser: "astro",
       },
     },
+    {
+      files: "*.json",
+      options: {
+        trailingComma: "none",
+      },
+    },
   ],
   printWidth: 120,
   trailingComma: "all",

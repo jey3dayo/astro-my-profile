@@ -1,0 +1,26 @@
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+
+includes = [
+  "*.astro",
+  "*.css",
+  "*.scss",
+  "*.html",
+  "*.js",
+  "*.jsx",
+  "*.ts",
+  "*.tsx",
+  "*.cjs",
+  "*.mjs",
+  "*.json",
+  "*.md",
+  "*.mdx",
+  "*.yml",
+  "*.yaml",
+]
+
+[formatter.toml]
+command = "taplo"
+options = ["format", "$@"]
+includes = ["*.toml"]
