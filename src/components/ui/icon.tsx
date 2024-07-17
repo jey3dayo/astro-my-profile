@@ -1,11 +1,13 @@
-import { BookText, Facebook, Github, Instagram, Twitter, type LucideIcon } from "lucide-react";
+import { SiFacebook, SiGithub, SiHatenabookmark, SiInstagram, SiMedium, SiX } from "@icons-pack/react-simple-icons";
+import { type LucideIcon } from "lucide-react";
 
 const PrimitiveIcon = {
-  facebook: Facebook,
-  instagram: Instagram,
-  twitter: Twitter,
-  github: Github,
-  book: BookText,
+  facebook: SiFacebook,
+  instagram: SiInstagram,
+  twitter: SiX,
+  github: SiGithub,
+  medium: SiMedium,
+  hatenaBookmark: SiHatenabookmark,
 };
 
 type Icon = keyof typeof PrimitiveIcon;
