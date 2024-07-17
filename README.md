@@ -6,6 +6,8 @@
 
 ## Who am I ?
 
+Hi there 👋 I'm Junya Nakazato
+
 ```
 {
   "name": "Junya Nakazato",

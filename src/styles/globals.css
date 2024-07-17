@@ -82,5 +82,6 @@ html {
 pre {
   background-color: inherit !important;
   padding: 10px;
+  margin-top: 4px;
   border-radius: 5px;
 }

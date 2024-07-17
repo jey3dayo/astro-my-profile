@@ -1,6 +1,8 @@
 ---
 ---
 
+Hi there 👋 I'm Junya Nakazato
+
 ```json
 {
   "name": "Junya Nakazato",
