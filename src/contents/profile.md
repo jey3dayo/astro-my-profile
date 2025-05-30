@@ -10,7 +10,7 @@ Hi there 👋 I'm Junya Nakazato
   "live": "Naha, Okinawa, Japan",
   "love": ["Coffee", "League of Legends", "GUILTY GEAR XX ΛCORE and Xrd"],
   "frontend": ["React", "shadcn/ui", "Radix", "Material UI"],
-  "backend": ["Next.js", "Rails", "Java", "PHP", "Spring Framework"],
+  "backend": ["Next.js", "Go", "Rails", "Java", "PHP", "Spring Framework"],
   "mobile": ["React Native", "Objective-C", "App Center"],
   "infrastructure": ["AWS", "ECS", "CloudFront", "Docker", "chef"],
   "ops": ["Github Actions", "CircleCI", "New Relic", "Datadog", "Sentry"],
