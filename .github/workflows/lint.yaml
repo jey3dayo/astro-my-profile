@@ -36,12 +36,6 @@ jobs:
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v26
 
-      - name: Restore and cache Nix store
-        uses: nix-community/cache-nix-action@v5
-        with:
-          primary-key: ${{ runner.os }}-nix-store-${{ hashFiles('**/*.nix') }}
-          restore-prefixes-first-match: ${{ runner.os }}-nix-store-
-
       - name: Install treefmt
         run: nix profile install 'nixpkgs#treefmt'
 
