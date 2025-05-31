@@ -3,4 +3,4 @@ _.file = [".env.local"]
 _.path = ['./node_modules/.bin']
 
 [tools]
-node = '22'
+node = '20'
