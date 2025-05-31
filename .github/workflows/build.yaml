@@ -9,6 +9,7 @@ on:
       - hotfix/*
       - release/*
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
