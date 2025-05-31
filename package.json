@@ -22,8 +22,8 @@
     "ncu": "ncu -u"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cli": "^19",
+    "@commitlint/config-conventional": "^19",
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "latest",
@@ -35,11 +35,11 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.14.0",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
+    "lint-staged": "^16",
     "npm-run-all": "^4.1.5",
-    "prettier": "3.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "prettier": "3.5",
+    "prettier-plugin-astro": "^0.14",
+    "prettier-plugin-tailwindcss": "^0.6",
     "windy-radix-palette": "^2.0.0-beta.7"
   },
   "dependencies": {
@@ -48,7 +48,6 @@
     "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.7.2",
-    "@bufbuild/protoc-gen-es": "^1.10.0",
     "@connectrpc/protoc-gen-connect-es": "^1.4.0",
     "@icons-pack/react-simple-icons": "^9.6.0",
     "@radix-ui/colors": "^3.0.0",
@@ -62,15 +61,13 @@
     "clsx": "^2.1.1",
     "execa": "^9.3.0",
     "lucide-react": "^0.408.0",
-    "neovim": "^5.1.0",
-    "npm-check-updates": "^16.14.20",
     "preact": "^10.22.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.4.0",
     "tailwindcss": "^3.4.6",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.5.3",
-    "zod": "^3.23.8"
+    "typescript": "^5.8",
+    "zod": "^3.25"
   }
 }
