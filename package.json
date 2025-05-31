@@ -41,6 +41,7 @@
     "prettier-plugin-astro": "^0.14",
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.6",
+    "svelte": "^5.33.10",
     "windy-radix-palette": "^2.0.0-beta.7"
   },
   "dependencies": {
