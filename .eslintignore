@@ -1,4 +1,5 @@
 node_modules
 public
 eslint.config.js
+astro.config.mjs
 dist
