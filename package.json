@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^6.19",
     "@typescript-eslint/parser": "latest",
     "env-cmd": "^10.1.0",
-    "eslint": "^9.0.0",
+    "eslint": "^9.28",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-turbo": "^1.11.3",
     "eslint-plugin-astro": "^0.31",
