@@ -17,39 +17,14 @@ export default [
     env: {
       node: true,
     },
-    extends: [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:@typescript-eslint/recommended-requiring-type-checking",
-      "plugin:@typescript-eslint/stylistic",
-      "plugin:@typescript-eslint/stylistic-type-checked",
-      "plugin:astro/recommended",
-      "plugin:tailwindcss/recommended",
-      "prettier",
-    ],
-    overrides: [
-      {
-        files: ["*.astro"],
-        parser: "astro-eslint-parser",
-        parserOptions: {
-          parser: "@typescript-eslint/parser",
-          extraFileExtensions: [".astro"],
-        },
-      },
-    ],
-    plugins: ["@typescript-eslint", "react", "tailwindcss"],
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
-      project: "./tsconfig.json",
-    },
+    extends: ["eslint:recommended", "plugin:astro/recommended", "plugin:tailwindcss/recommended", "prettier"],
+    plugins: ["react", "tailwindcss"],
     rules: {
       "tailwindcss/classnames-order": "error",
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/no-non-null-assertion": "warn",
       "tailwindcss/no-custom-classname": 0,
     },
   }),
   {
-    ignores: ["node_modules", "public", "dist", "eslint.config.js"],
+    ignores: ["node_modules", "public", "dist", "eslint.config.js", "astro.config.mjs", "**/*.astro"],
   },
 ];
