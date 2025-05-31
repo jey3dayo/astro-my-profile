@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "packageManager": "bun@1.0.0",
   "engines": {
-    "node": ">=22.0.0 <=22.x.x"
+    "node": ">=20.0.0 <=20.x.x"
   },
   "scripts": {
     "husky:install": "husky install .husky",
