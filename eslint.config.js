@@ -59,6 +59,12 @@ export default [
     },
   },
   {
+    files: ["**/*.astro", "**/*.{js,ts,jsx,tsx}"],
+    rules: {
+      "tailwindcss/no-custom-classname": "off",
+    },
+  },
+  {
     ignores: ["dist", "node_modules", ".github", "types.generated.d.ts", ".astro"],
   },
 ];
