@@ -1,55 +1,70 @@
-import path from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
+import eslint from "@eslint/js";
+import typescriptParser from "@typescript-eslint/parser";
+import astroEslintParser from "astro-eslint-parser";
+import gitignore from "eslint-config-flat-gitignore";
+import eslintPluginAstro from "eslint-plugin-astro";
+import eslintPluginTailwind from "eslint-plugin-tailwindcss";
+import globals from "globals";
+import tsEslint from "typescript-eslint";
 
 export default [
-  ...compat.config({
-    env: {
-      node: true,
-    },
-    extends: [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:@typescript-eslint/recommended-requiring-type-checking",
-      "plugin:@typescript-eslint/stylistic",
-      "plugin:@typescript-eslint/stylistic-type-checked",
-      "plugin:astro/recommended",
-      "plugin:tailwindcss/recommended",
-      "prettier",
-    ],
-    overrides: [
-      {
-        files: ["*.astro"],
-        parser: "astro-eslint-parser",
-        parserOptions: {
-          parser: "@typescript-eslint/parser",
-          extraFileExtensions: [".astro"],
-        },
+  gitignore(),
+  eslint.configs.recommended,
+  ...tsEslint.configs.recommended,
+  ...eslintPluginTailwind.configs["flat/recommended"],
+  ...eslintPluginAstro.configs["flat/recommended"],
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
       },
-    ],
-    plugins: ["@typescript-eslint", "react", "tailwindcss"],
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
-      project: "./tsconfig.json",
+    },
+  },
+  {
+    files: ["**/*.astro"],
+    languageOptions: {
+      parser: astroEslintParser,
+      parserOptions: {
+        parser: typescriptParser,
+        extraFileExtensions: [".astro"],
+      },
+    },
+  },
+  {
+    files: ["**/*.{ts,tsx,mts,cts,js,jsx,astro}"],
+    rules: {
+      "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    },
+  },
+  {
+    // Define the configuration for `<script>` tag.
+    // Script in `<script>` is assigned a virtual file name with the `.js` extension.
+    files: ["**/*.{ts,tsx}", "**/*.astro/*.js"],
+    languageOptions: {
+      parser: typescriptParser,
     },
     rules: {
-      "tailwindcss/classnames-order": "error",
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/no-non-null-assertion": "warn",
-      "tailwindcss/no-custom-classname": 0,
+      // Note: you must disable the base rule as it can report incorrect errors
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn", //'error'
+        {
+          argsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+        },
+      ],
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
     },
-  }),
+  },
   {
-    ignores: ["node_modules", "public", "dist", "eslint.config.js"],
+    files: ["**/*.astro", "**/*.{js,ts,jsx,tsx}"],
+    rules: {
+      "tailwindcss/no-custom-classname": "off",
+    },
+  },
+  {
+    ignores: ["dist", "node_modules", ".github", "types.generated.d.ts", ".astro"],
   },
 ];
