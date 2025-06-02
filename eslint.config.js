@@ -32,6 +32,7 @@ export default [
         files: ["*.astro"],
         parser: "astro-eslint-parser",
         parserOptions: {
+          // project: "./tsconfig.json",
           parser: "@typescript-eslint/parser",
           extraFileExtensions: [".astro"],
         },
@@ -50,6 +51,16 @@ export default [
     },
   }),
   {
-    ignores: ["node_modules", "public", "dist", "eslint.config.js"],
+    ignores: [
+      "node_modules",
+      "public",
+      "dist",
+      ".vercel",
+      "astro.config.mjs",
+      "eslint.config.js",
+      "commitlint.config.cjs",
+      "lint-staged.config.cjs",
+      "env.mjs",
+    ],
   },
 ];
