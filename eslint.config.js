@@ -1,5 +1,3 @@
-// @ts-check
-
 import eslint from "@eslint/js";
 import typescriptParser from "@typescript-eslint/parser";
 import astroEslintParser from "astro-eslint-parser";
@@ -28,7 +26,7 @@ export default [
     languageOptions: {
       parser: astroEslintParser,
       parserOptions: {
-        parser: "@typescript-eslint/parser",
+        parser: typescriptParser,
         extraFileExtensions: [".astro"],
       },
     },
