@@ -51,10 +51,6 @@
 }
 
 @layer components {
-  .box {
-    @apply shadow-highlight rounded-md bg-gray-color-3 text-foreground;
-  }
-
   .hero {
     background-image: url("/images/bg.jpg");
     background-size: cover;

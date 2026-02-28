@@ -1,5 +1,4 @@
 import { SiFacebook, SiGithub, SiHatenabookmark, SiInstagram, SiMedium, SiX } from "@icons-pack/react-simple-icons";
-import { type LucideIcon } from "lucide-react";
 
 const PrimitiveIcon = {
   facebook: SiFacebook,
@@ -22,4 +21,4 @@ const iconSizes: Record<Size, number | undefined> = {
 };
 
 export { PrimitiveIcon as Icons, iconSizes };
-export type { LucideIcon, Size, Icon };
+export type { Size, Icon };
