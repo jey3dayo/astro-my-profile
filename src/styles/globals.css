@@ -1,49 +1,130 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* v4 エントリポイント */
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: var(--slate1);
-    --foreground: var(--slate11);
-    --card: var(--slate1);
-    --card-foreground: var(--slate12);
-    --popover: var(--slate1);
-    --popover-foreground: var(--slate12);
-    --primary: var(--violet11);
-    --primary-foreground: var(--slate2);
-    --secondary: var(--teal10);
-    --secondary-foreground: var(--slate3);
-    --muted: var(--slate3);
-    --muted-foreground: var(--slate10);
-    --weak: var(--slate11);
-    --weak-foreground: var(--slate2);
-    --accent: var(--teal10);
-    --accent-foreground: var(--slate12);
-    --destructive: var(--red9);
-    --destructive-foreground: var(--slate2);
-    --warning: var(--amber10);
-    --warning-foreground: var(--slate12);
-    --border: var(--slate6);
-    --border-weak: var(--slate4);
-    --input: var(--slate5);
-    --ring: var(--slate8);
-    --radius: 0.5rem;
-    --ui: var(--slate4);
-    --ui-weak: var(--slate3);
-    --ui-strong: var(--slate5);
-    --ui-foreground: var(--slate10);
+/* tw-animate-css (tailwindcss-animate の v4 代替) */
+@import "tw-animate-css";
+
+/* Radix UI Colors */
+@import "@radix-ui/colors/slate.css";
+@import "@radix-ui/colors/slate-alpha.css";
+@import "@radix-ui/colors/violet.css";
+@import "@radix-ui/colors/violet-alpha.css";
+@import "@radix-ui/colors/teal.css";
+@import "@radix-ui/colors/teal-alpha.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/amber.css";
+
+/* tailwind.config.ts から移行した @theme 定義 */
+@theme {
+  --color-black: var(--color-neutral-950);
+  --color-dark: var(--color-neutral-800);
+  --color-medium: var(--color-neutral-500);
+  --color-light: var(--color-neutral-100);
+  --color-white: var(--color-neutral-50);
+
+  /* セマンティックカラー */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-weak: var(--weak);
+  --color-weak-foreground: var(--weak-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Container */
+  --container-2xl: 1400px;
+
+  /* Border radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Accordion アニメーション */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
 
+/* セマンティック CSS 変数 (Radix CSS変数: --slate-1 形式) */
 @layer base {
+  :root {
+    --background: var(--slate-1);
+    --foreground: var(--slate-11);
+    --card: var(--slate-1);
+    --card-foreground: var(--slate-12);
+    --popover: var(--slate-1);
+    --popover-foreground: var(--slate-12);
+    --primary: var(--violet-11);
+    --primary-foreground: var(--slate-2);
+    --secondary: var(--teal-10);
+    --secondary-foreground: var(--slate-3);
+    --muted: var(--slate-3);
+    --muted-foreground: var(--slate-10);
+    --weak: var(--slate-11);
+    --weak-foreground: var(--slate-2);
+    --accent: var(--teal-10);
+    --accent-foreground: var(--slate-12);
+    --destructive: var(--red-9);
+    --destructive-foreground: var(--slate-2);
+    --warning: var(--amber-10);
+    --warning-foreground: var(--slate-12);
+    --border: var(--slate-6);
+    --border-weak: var(--slate-4);
+    --input: var(--slate-5);
+    --ring: var(--slate-8);
+    --radius: 0.5rem;
+    --ui: var(--slate-4);
+    --ui-weak: var(--slate-3);
+    --ui-strong: var(--slate-5);
+    --ui-foreground: var(--slate-10);
+  }
+
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
 
   body {
-    @apply bg-background text-foreground;
-
+    background-color: var(--background);
+    color: var(--foreground);
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
