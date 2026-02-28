@@ -7,7 +7,7 @@ const siteDomain = import.meta.env.SITE_DOMAIN ?? "";
 ---
 
 <Layout title={appName}>
-  <main class="hero relative flex min-h-screen flex-col bg-white sm:block sm:pb-20">
+  <main class="hero relative flex flex-col bg-white sm:block sm:min-h-screen sm:pb-20">
     <div class="p-3 text-2xl font-bold text-white sm:absolute sm:top-0 sm:left-0 sm:p-4 sm:text-4xl md:text-6xl">
       {siteDomain}
     </div>
@@ -18,7 +18,7 @@ const siteDomain = import.meta.env.SITE_DOMAIN ?? "";
       <p class="mt-2 overflow-x-auto text-sm sm:text-base"><Content /></p>
     </div>
     <footer
-      class="text-light mt-auto w-full bg-black/50 px-2 py-1 text-center text-xs sm:absolute sm:bottom-0 sm:left-0 sm:text-sm md:text-base"
+      class="text-light w-full bg-black/50 px-2 py-1 text-center text-xs sm:absolute sm:bottom-0 sm:left-0 sm:mt-auto sm:text-sm md:text-base"
     >
       ©{new Date().getFullYear()}
       {siteDomain}
