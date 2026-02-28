@@ -38,17 +38,14 @@ export default [
     },
   },
   {
-    // Define the configuration for `<script>` tag.
-    // Script in `<script>` is assigned a virtual file name with the `.js` extension.
     files: ["**/*.{ts,tsx}", "**/*.astro/*.js"],
     languageOptions: {
       parser: typescriptParser,
     },
     rules: {
-      // Note: you must disable the base rule as it can report incorrect errors
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
-        "warn", //'error'
+        "warn",
         {
           argsIgnorePattern: "^_",
           destructuredArrayIgnorePattern: "^_",
