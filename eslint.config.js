@@ -50,6 +50,6 @@ export default [
     },
   }),
   {
-    ignores: ["node_modules", "public", "dist", "eslint.config.js"],
+    ignores: ["node_modules", "public", "dist", ".astro", ".vercel", "eslint.config.js"],
   },
 ];
