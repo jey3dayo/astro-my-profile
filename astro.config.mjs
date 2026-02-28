@@ -15,11 +15,6 @@ export default defineConfig({
     }),
     preact(),
   ],
-  vite: {
-    ssr: {
-      noExternal: ["astro"],
-    },
-  },
   markdown: {
     shikiConfig: {
       theme: "rose-pine-moon",
