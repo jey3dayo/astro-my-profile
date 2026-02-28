@@ -3,7 +3,6 @@ import typescriptParser from "@typescript-eslint/parser";
 import astroEslintParser from "astro-eslint-parser";
 import gitignore from "eslint-config-flat-gitignore";
 import eslintPluginAstro from "eslint-plugin-astro";
-import eslintPluginTailwind from "eslint-plugin-tailwindcss";
 import globals from "globals";
 import tsEslint from "typescript-eslint";
 
@@ -11,7 +10,6 @@ export default [
   gitignore(),
   eslint.configs.recommended,
   ...tsEslint.configs.recommended,
-  ...eslintPluginTailwind.configs["flat/recommended"],
   ...eslintPluginAstro.configs["flat/recommended"],
   {
     languageOptions: {
@@ -53,12 +51,6 @@ export default [
       ],
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-explicit-any": "warn",
-    },
-  },
-  {
-    files: ["**/*.astro", "**/*.{js,ts,jsx,tsx}"],
-    rules: {
-      "tailwindcss/no-custom-classname": "off",
     },
   },
   {
