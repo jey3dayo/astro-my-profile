@@ -14,7 +14,7 @@ const socialLinks = [
 <div class="flex justify-between space-x-4">
   {
     socialLinks.map(({ href, Icon }) => (
-      <a href={href} target="_blank">
+      <a href={href} target="_blank" rel="noopener noreferrer">
         <Icon size={iconSizes.lg} />
       </a>
     ))
