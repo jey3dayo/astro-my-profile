@@ -1,12 +1,22 @@
 ---
 import { Icons, iconSizes } from "@/components/ui/icon";
+
+const socialLinks = [
+  { href: "https://twitter.com/j138", Icon: Icons.twitter },
+  { href: "https://www.facebook.com/nakazajun", Icon: Icons.facebook },
+  { href: "https://github.com/jey3dayo", Icon: Icons.github },
+  { href: "https://www.instagram.com/jey3dayo", Icon: Icons.instagram },
+  { href: "https://medium.com/@J138", Icon: Icons.medium },
+  { href: "http://b.hatena.ne.jp/J138", Icon: Icons.hatenaBookmark },
+];
 ---
 
 <div class="flex justify-between space-x-4">
-  <a href="https://twitter.com/j138"><Icons.twitter target="_blank" size={iconSizes.lg} /></a>
-  <a href="https://www.facebook.com/nakazajun" target="_blank"><Icons.facebook size={iconSizes.lg} /></a>
-  <a href="https://github.com/jey3dayo" target="_blank"><Icons.github size={iconSizes.lg} /></a>
-  <a href="https://www.instagram.com/jey3dayo" target="_blank"><Icons.instagram size={iconSizes.lg} /></a>
-  <a href="https://medium.com/@J138" target="_blank"><Icons.medium size={iconSizes.lg} /></a>
-  <a href="http://b.hatena.ne.jp/J138" target="_blank"><Icons.hatenaBookmark size={iconSizes.lg} /></a>
+  {
+    socialLinks.map(({ href, Icon }) => (
+      <a href={href} target="_blank">
+        <Icon size={iconSizes.lg} />
+      </a>
+    ))
+  }
 </div>

@@ -14,6 +14,6 @@ Hi there 👋 I'm Junya Nakazato
   "mobile": ["React Native", "Objective-C", "App Center"],
   "infrastructure": ["AWS", "ECS", "CloudFront", "Docker", "chef"],
   "ops": ["Github Actions", "CircleCI", "New Relic", "Datadog", "Sentry"],
-  "tools": ["Neovim", "WezTerm", "Zsh", "XCode", "Vivaldi", "Vimperator"]
+  "tools": ["Neovim", "Cursor", "WezTerm", "Zsh", "XCode", "Vivaldi", "Vimperator"]
 }
 ```
