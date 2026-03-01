@@ -8,18 +8,18 @@ const siteDomain = SITE_DOMAIN ?? "";
 ---
 
 <Layout title={appName}>
-  <main class="hero relative flex min-h-[100svh] min-h-screen flex-col bg-white sm:block sm:pb-20">
-    <div class="p-3 text-2xl font-bold text-white sm:absolute sm:top-0 sm:left-0 sm:p-4 sm:text-4xl md:text-6xl">
+  <main class="hero relative flex min-h-[100svh] min-h-screen flex-col bg-white lg:block lg:pb-20">
+    <div class="p-3 text-2xl font-bold text-white lg:absolute lg:top-0 lg:left-0 lg:p-4 lg:text-4xl xl:text-6xl">
       {siteDomain}
     </div>
     <div
-      class="mx-2 mt-2 rounded-sm bg-black/50 p-3 text-white sm:absolute sm:inset-x-0 sm:bottom-10 sm:left-auto sm:mx-4 sm:mt-0 sm:p-4"
+      class="mx-2 mt-2 rounded-sm bg-black/50 p-3 text-white lg:absolute lg:inset-x-0 lg:bottom-10 lg:left-auto lg:mx-4 lg:mt-0 lg:p-4"
     >
-      <h2 class="text-xl font-semibold sm:text-2xl md:text-3xl">Who am I ?</h2>
-      <p class="mt-2 overflow-x-auto text-sm sm:text-base"><Content /></p>
+      <h2 class="text-xl font-semibold lg:text-2xl xl:text-3xl">Who am I ?</h2>
+      <p class="mt-2 overflow-x-auto text-sm lg:text-base"><Content /></p>
     </div>
     <footer
-      class="text-light mt-auto w-full bg-black/50 px-2 py-1 text-center text-xs sm:absolute sm:bottom-0 sm:left-0 sm:text-sm md:text-base"
+      class="text-light mt-auto w-full bg-black/50 px-2 py-1 text-center text-xs lg:absolute lg:bottom-0 lg:left-0 lg:text-sm xl:text-base"
     >
       ©{new Date().getFullYear()}
       {siteDomain}
