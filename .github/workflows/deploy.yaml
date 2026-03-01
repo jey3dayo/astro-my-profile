@@ -29,6 +29,8 @@ jobs:
       - name: Build
         env:
           DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
+          APP_NAME: jey3dayo.net
+          SITE_DOMAIN: jey3dayo.net
         run: bun run astro:build
 
       - name: Deploy

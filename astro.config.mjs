@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
@@ -16,6 +16,12 @@ export default defineConfig({
       theme: "rose-pine-moon",
       langs: ["json"],
       wrap: true,
+    },
+  },
+  env: {
+    schema: {
+      APP_NAME: envField.string({ context: "client", access: "public" }),
+      SITE_DOMAIN: envField.string({ context: "client", access: "public" }),
     },
   },
 });
