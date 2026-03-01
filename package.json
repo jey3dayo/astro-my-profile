@@ -15,7 +15,7 @@
     "astro": "astro",
     "astro:build": "dotenvx run -- astro build",
     "deploy": "run-s astro:build cf:deploy",
-    "cf:deploy": "dotenvx run -- wrangler deploy",
+    "cf:deploy": "node scripts/prepare-cloudflare-assetsignore.mjs && dotenvx run -- wrangler deploy",
     "cf:preview": "dotenvx run -- wrangler dev",
     "cf:logs": "dotenvx run -- wrangler tail --format pretty",
     "env:encrypt": "dotenvx encrypt",
