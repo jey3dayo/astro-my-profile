@@ -3,7 +3,11 @@ dist/
 
 # generated types
 .astro/
-.vercel/
+
+# wrangler / cloudflare
+.wrangler
+.dev.vars
+.secrets.json
 
 # dependencies
 node_modules/
@@ -15,9 +19,9 @@ yarn-error.log*
 pnpm-debug.log*
 
 # environment variables
-.env
-.env.production
-!.env.local
+# 暗号化された .env はコミット対象
+.env*.local
+.env.keys
 
 # macOS-specific files
 .DS_Store
