@@ -9,6 +9,10 @@
     "binding": "ASSETS",
   },
   "observability": { "enabled": true },
+  "routes": [
+    { "pattern": "jey3dayo.net", "custom_domain": true },
+    { "pattern": "www.jey3dayo.net", "custom_domain": true },
+  ],
   "vars": {
     "APP_NAME": "jey3dayo.net",
     "SITE_DOMAIN": "jey3dayo.net",
