@@ -48,16 +48,13 @@ jobs:
       - name: Deploy preview worker
         id: deploy
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
         run: |
           PR_NUMBER="${{ github.event.pull_request.number || 'manual' }}"
           PREVIEW_NAME="astro-my-profile-pr-${PR_NUMBER}"
           echo "preview_name=$PREVIEW_NAME" >> "$GITHUB_OUTPUT"
 
-          if [ -f .env ]; then mv .env .env.ci-bak; fi
-          bun wrangler deploy --name "$PREVIEW_NAME" 2>&1 | tee /tmp/wrangler-preview.log
-          if [ -f .env.ci-bak ]; then mv .env.ci-bak .env; fi
+          bunx dotenvx run -- bun wrangler deploy --name "$PREVIEW_NAME" 2>&1 | tee /tmp/wrangler-preview.log
 
           PREVIEW_URL="$(grep -Eo 'https://[^ ]+\.workers\.dev' /tmp/wrangler-preview.log | tail -1 || true)"
           if [ -z "$PREVIEW_URL" ]; then
