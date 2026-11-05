@@ -1,0 +1,19 @@
+// PR プレビュー専用。wrangler.jsonc から routes を除いた設定。
+// routes を持たせると、プレビュー Worker が本番のカスタムドメインを奪い、workers.dev も有効にならない。
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "astro-my-profile-preview",
+  "main": "dist/_worker.js",
+  "compatibility_date": "2026-03-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "dist",
+    "binding": "ASSETS",
+  },
+  "observability": { "enabled": true },
+  "workers_dev": true,
+  "vars": {
+    "APP_NAME": "jey3dayo.net",
+    "SITE_DOMAIN": "jey3dayo.net",
+  },
+}
