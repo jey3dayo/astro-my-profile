@@ -55,7 +55,7 @@ jobs:
           PREVIEW_NAME="astro-my-profile-pr-${PR_NUMBER}"
           echo "preview_name=$PREVIEW_NAME" >> "$GITHUB_OUTPUT"
 
-          bun wrangler deploy --name "$PREVIEW_NAME" 2>&1 | tee /tmp/wrangler-preview.log
+          bun wrangler deploy --config wrangler.preview.jsonc --name "$PREVIEW_NAME" 2>&1 | tee /tmp/wrangler-preview.log
 
           PREVIEW_URL="$(grep -Eo 'https://[^ ]+\.workers\.dev' /tmp/wrangler-preview.log | tail -1 || true)"
           if [ -z "$PREVIEW_URL" ]; then
